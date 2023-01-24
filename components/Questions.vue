@@ -92,7 +92,7 @@
                                         <b-button v-b-tooltip.hover title="Delete User" @click="DeleteClick(item)" color: red >Delete</b-button>
                                     </div>
                                     <div class="col">
-                                        <b-button v-b-tooltip.hover title="Edit User Info" @click="EditClick(item, index)" color: red>Edit</b-button>
+                                        <b-button v-b-tooltip.hover title="Edit User Info" @click="EditClick(item, index)" color: blue>Edit</b-button>
                                     </div>
                                 </div>
                             </template>
