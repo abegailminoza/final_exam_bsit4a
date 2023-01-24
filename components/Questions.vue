@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4">
-                <div class="card" style="color: black;">
+                <div class="card" style="color: gray;">
                     <div class="card-header">
                         <h1 style="font-family: Alatsi, sans-serif;font-weight: bold;">Insert A Question</h1>
                     </div>
@@ -48,13 +48,13 @@
                     <div class="card-footer">
                         <div class="row" >
                             <div class="col-6 d-flex justify-content-xxl-end align-items-xxl-center" style="padding-right: 35px;padding-left: 35px;">
-                                <button class="btn btn-primary" id="ResetBtn" @click="ResetInput()" data-bss-hover-animate="shake" type="button" style="font-family: Aboreto, serif;font-weight: bold;background: var(--bs-green);text-align: center;width: 208px;border-style: none;">Reset</button>
+                                <button class="btn btn-primary" id="ResetBtn" @click="ResetInput()" data-bss-hover-animate="shake" type="button" style="font-family: Aboreto, serif;font-weight: bold;background: black;text-align: center;width: 208px;border-style: none;">Reset</button>
                             </div>
                             <div class="col-6 d-flex justify-content-xxl-start align-items-xxl-center" v-if="!edit" style="padding-right: 35px;padding-left: 35px;">
-                                <button class="btn btn-primary" id="InsertBtn" @click="InsertClick()" data-bss-hover-animate="pulse" type="submit" style="background: var(--bs-green);font-family: Aboreto, serif;font-weight: bold;text-align: center;width: 208px;border-style: none;">Insert</button>
+                                <button class="btn btn-primary" id="InsertBtn" @click="InsertClick()" data-bss-hover-animate="pulse" type="submit" style="background: black;font-family: Aboreto, serif;font-weight: bold;text-align: center;width: 208px;border-style: none;">Insert</button>
                             </div>
                             <div class="col-6 d-flex justify-content-xxl-end align-items-xxl-center" v-if="edit" style="padding-right: 35px;padding-left: 35px;">
-                                <button class="btn btn-primary" id="UpdateBtn" @click="UpdateClick()" data-bss-hover-animate="shake" type="button" style="font-family: Aboreto, serif;font-weight: bold;background: var(--bs-green);text-align: center;width: 208px;border-style: none;">Update</button>
+                                <button class="btn btn-primary" id="UpdateBtn" @click="UpdateClick()" data-bss-hover-animate="shake" type="button" style="font-family: Aboreto, serif;font-weight: bold;background: black;text-align: center;width: 208px;border-style: none;">Update</button>
                             </div>
                         </div>
                     </div>
@@ -69,12 +69,12 @@
                             </div>
                             <div class="col-3 d-flex justify-content-xxl-center align-items-xxl-center">
                                 <button @click="showAnswer()" class="btn btn-primary d-flex justify-content-xxl-center align-items-xxl-center" 
-                                data-bss-hover-animate="rubberBand" type="button" style="background: var(--bs-green);font-family: Alatsi, sans-serif;text-align: center;width: 208px;border-style: none;">{{ showBtn }} Answer Key</button></div>
+                                data-bss-hover-animate="rubberBand" type="button" style="background: red;font-family: Alatsi, sans-serif;text-align: center;width: 208px;border-style: none;">{{ showBtn }} Answer</button></div>
                         </div>
                     </div>
-                    <div class="col" style="color: white !important;">
-                        <b-table id="MongoTable"  sticky-header="70vh" style="overflow-x: hidden; color: white;" head-variant="light" no-border-collapse borderless :items="items" :fields="fields" class="mytable">
-                            <template v-slot:cell(Choices)="{ item, index }">
+                    <div class="col" style="color: gray !important;">
+                        <b-table id="MongoTable"  sticky-header="70vh" style="overflow-x: hidden; color: gray;" head-variant="light" no-border-collapse borderless :items="items" :fields="fields" class="mytable">
+                            <template v-slot:cell(Choices)="{ item }">
                                 <div class="d-flex" style="flex-direction: row;">
                                     <div v-if="!show">
                                         <strong>Choice A : </strong><span>{{ item.ChoiceA }}</span><br>
@@ -89,10 +89,10 @@
                             <template v-slot:cell(actions)="{ item, index }">
                                 <div class="row">
                                     <div class="col">
-                                        <b-button v-b-tooltip.hover title="Delete User" @click="DeleteClick(item)" variant="warning"><img src="/delete.png" style="width: 1.5vw; height: 1.5vw;" /></b-button>
+                                        <b-button v-b-tooltip.hover title="Delete User" @click="DeleteClick(item)" color: red >Delete</b-button>
                                     </div>
                                     <div class="col">
-                                        <b-button v-b-tooltip.hover title="Edit User Info" @click="EditClick(item, index)" variant="info"><img src="/edit.png" style="width: 1.5vw; height: 1.5vw;" /></b-button>
+                                        <b-button v-b-tooltip.hover title="Edit User Info" @click="EditClick(item, index)" color: red>Edit</b-button>
                                     </div>
                                 </div>
                             </template>
@@ -280,7 +280,7 @@ export default{
     padding-left: 15px;
     height: 5vh;
     font-size: 1.1vw;
-    color: #ebc960;
+    color: gray;
     background-color: transparent;
 }
 
@@ -293,7 +293,7 @@ export default{
     position: sticky !important;
     color: black;
     font-style: bold;
-    background: goldenrod !important;
+    background: gray !important;
     font-size: 15px !important;
   }
 </style>
